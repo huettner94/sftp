@@ -52,7 +52,7 @@ function oneTimeSetUp() {
     chmod go-rw "$sshKeyPri"
 
     # Generate host key
-    ssh-keygen -t ed25519 -f "$sshHostEd25519Key" < /dev/null
+    ssh-keygen -t ed25519 -f "$sshHostEd25519Key" -q -N ""
 }
 
 function setUp() {
