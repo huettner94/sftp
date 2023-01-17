@@ -11,7 +11,7 @@ on:
   pull_request:
 
 env:
-  IMAGE_NAME: kalioz/sftp # TODO change if this is ever merged back to atmoz
+  IMAGE_NAME: huettner94/sftp  # TODO change if this is ever merged back to atmoz
 
 jobs:
   build:
