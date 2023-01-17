@@ -153,14 +153,3 @@ jobs:
             org.opencontainers.image.source=${{ env.gh_server_url }}/${{ github.repository }}
             org.opencontainers.image.revision=${{ github.sha }}
             org.opencontainers.image.created=${{ env.rfc_date }}
-      
-      # Push to github registry
-      - name: Push images to GitHub registry
-        if: github.ref == 'refs/heads/master'
-        run: |
-          TAG_DEBIAN=docker.pkg.github.com/$GITHUB_REPOSITORY/debian
-          TAG_ALPINE=docker.pkg.github.com/$GITHUB_REPOSITORY/alpine
-          docker tag $IMAGE_NAME:debian $TAG_DEBIAN
-          docker tag $IMAGE_NAME:alpine $TAG_ALPINE
-          docker push $TAG_DEBIAN
-          docker push $TAG_ALPINE
